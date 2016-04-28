@@ -3,7 +3,10 @@ import static org.junit.Assert.*;
 import java.time.LocalDateTime;
 
 public class TaskTest {
-
+  @After
+  public void tearDown() {
+    Task.clear();
+  }
   @Test
   public void Task_instantiatesCorrectly_true() {
     Task myTask = new Task("Mow the lawn");
@@ -45,7 +48,6 @@ public class TaskTest {
 
   @Test
   public void getId_tasksInstantiateWithAnID_1() {
-    Task.clear();  // THIS TEST WILL FAIL WITHOUT THIS LINE! This is important because the list of tasks does not automatically clear between each test.
     Task myTask = new Task("Mow the lawn");
     assertEquals(1, myTask.getId());
   }
