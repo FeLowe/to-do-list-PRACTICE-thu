@@ -1,0 +1,10 @@
+#if ($category)
+  <h1>$category.getName()</h1>
+  <h3>$category.getTasks()</h3>
+
+#else
+  <h1> Category not found </h1>
+#end
+
+<a href="/category/new">Add another category</a>
+<a href="/categories">All categories</a>
